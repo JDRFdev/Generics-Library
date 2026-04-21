@@ -1,20 +1,21 @@
 package Library;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Stack<T> {
-    private ArrayList<T> Object;
+    private ArrayList<T> object;
 
-    public Stack(ArrayList<T> object) {
-        Object = new ArrayList<>();
+    public Stack() {
+        object = new ArrayList<>();
     }
     public void push(T obj){
-        Object.add(obj);
+        object.add(obj);
     }
     public T pop(){
-        if (!Object.isEmpty()){
-            return Object.get(Object.size()-1);
+        if (!object.isEmpty()){
+            T obj =object.get(object.size()-1);
+            object.remove(object.size()-1);
+            return obj;
         }
         return null;
     }
